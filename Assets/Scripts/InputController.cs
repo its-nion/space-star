@@ -8,7 +8,12 @@ public class InputController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Dialog.Instance.startDialog();
+            TypeWriter.Instance.StartDialog("Hallo meine Freunde|Ich liebe euch ein bisschen!|Hallo ELIAS DER GRO?EEE", debugLogTest);
         }
+    }
+
+    public void debugLogTest()
+    {
+        Debug.Log("TEST SUCCESSFULL!");
     }
 }

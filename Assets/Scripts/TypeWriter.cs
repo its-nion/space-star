@@ -1,104 +1,117 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class TypeWriter : MonoBehaviour
 {
-    private TMP_Text _textBox;
-
-    // Basic Typewriter Functionality
-    private int _currentVisibleCharacterIndex;
-    private Coroutine _typewriterCoroutine;
-    private bool _readyForNewText = true;
-
-    private WaitForSeconds _simpleDelay;
-    private WaitForSeconds _interpunctuationDelay;
+    [Header("Gameobjects")]
+    [SerializeField] private TMP_Text _textBox;
+    [SerializeField] private AudioSource _sfx;
+    [SerializeField] private Animator _animator;
 
     [Header("Typewriter Settings")]
     [SerializeField] private float charactersPerSecond = 20;
-    [SerializeField] private float interpunctuationDelay = 0.5f;
+    [SerializeField] [Range(0.1f, 0.5f)] private float sendDoneDelay = 0.25f;
 
-
-    // Skipping Functionality
-    public bool CurrentlySkipping { get; private set; }
-    private WaitForSeconds _skipDelay;
-
-    [Header("Skip options")]
-    [SerializeField] private bool quickSkip;
-    [SerializeField] [Min(1)] private int skipSpeedup = 5;
-
-
-    // Event Functionality
-    private WaitForSeconds _textboxFullEventDelay;
-    [SerializeField] [Range(0.1f, 0.5f)] private float sendDoneDelay = 0.25f; // In testing, I found 0.25 to be a good value
-
-    public static event Action CompleteTextRevealed;
-    public static event Action<char> CharacterRevealed;
-
+    public static TypeWriter Instance { get; private set; }
+    private string[] currentLines;
+    private int _currentVisibleCharacterIndex;
+    private WaitForSeconds _delay;
+    private WaitForSeconds _endEventDelay;
+    private static event Action EndFunction;
 
     private void Awake()
     {
-        _textBox = GetComponent<TMP_Text>();
+        // If there is an instance, and it's not me, delete myself.
 
-        _simpleDelay = new WaitForSeconds(1 / charactersPerSecond);
-        _interpunctuationDelay = new WaitForSeconds(interpunctuationDelay);
-
-        _skipDelay = new WaitForSeconds(1 / (charactersPerSecond * skipSpeedup));
-        _textboxFullEventDelay = new WaitForSeconds(sendDoneDelay);
-    }
-
-    private void OnEnable()
-    {
-        //TMPro_EventManager.TEXT_CHANGED_EVENT.Add(PrepareForNewText);
-    }
-
-    private void OnDisable()
-    {
-        //TMPro_EventManager.TEXT_CHANGED_EVENT.Remove(PrepareForNewText);
-    }
-
-    #region Skipfunctionality
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
+        if (Instance != null && Instance != this)
         {
-            if (_textBox.maxVisibleCharacters != _textBox.textInfo.characterCount - 1)
-                Skip();
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+
+            _delay = new WaitForSeconds(1 / charactersPerSecond);
+
+            _endEventDelay = new WaitForSeconds(sendDoneDelay);
         }
     }
 
-    // Example for how to implement it in the New Input system
-    // You'd have to use a PlayerController component on this gameobject and write the function's name as On[Input Action name] for this to work.
-    // In this case, my Input Action is called "RightMouseClick". But: There are a ton of ways to implement checking if a button
-    // has been pressed in this system. Go watch Piti's video on the different ways of utilizing the new input system: https://www.youtube.com/watch?v=Wo6TarvTL5Q
-
-    // private void OnRightMouseClick()
-    // {
-    //     if (_textBox.maxVisibleCharacters != _textBox.textInfo.characterCount - 1)
-    //         Skip();
-    // }
-    #endregion
-
-    private void PrepareForNewText(UnityEngine.Object obj)
+    private void playSound()
     {
-        if (obj != _textBox || !_readyForNewText || _textBox.maxVisibleCharacters >= _textBox.textInfo.characterCount)
-            return;
-
-        CurrentlySkipping = false;
-        _readyForNewText = false;
-
-        if (_typewriterCoroutine != null)
-            StopCoroutine(_typewriterCoroutine);
-
-        _textBox.maxVisibleCharacters = 0;
-        _currentVisibleCharacterIndex = 0;
-
-        _typewriterCoroutine = StartCoroutine(Typewriter());
+        //_sfx.Play();
     }
 
-    private IEnumerator Typewriter()
+    public void StartDialog(string dialogText, Action endFunction)
+    {
+        _textBox.maxVisibleCharacters = 0;
+
+        StartCoroutine(Dialog(dialogText, endFunction));
+    }
+
+    private IEnumerator Dialog(string text, Action endFunction)
+    {
+        currentLines = text.Split('|');
+
+        _animator.SetBool("Dialog", true);
+        yield return new WaitForSeconds(0.35f);
+
+        // Fuer jede line
+        foreach (var l in currentLines)
+        {
+            // reset
+            _textBox.maxVisibleCharacters = 0;
+            _currentVisibleCharacterIndex = 0;
+
+            // initiate
+            _textBox.text = l;
+
+            TMP_TextInfo textInfo = _textBox.textInfo;
+
+            while (_currentVisibleCharacterIndex < textInfo.characterCount)
+            {
+                var lastCharacterIndex = textInfo.characterCount - 1;
+
+                // Falls wir nicht beim letzten Buchstaben sind
+                if (_currentVisibleCharacterIndex < lastCharacterIndex)
+                {
+                    char character = textInfo.characterInfo[_currentVisibleCharacterIndex].character;
+
+                    _sfx.Play();
+                    _textBox.maxVisibleCharacters++;
+
+                    yield return _delay;
+
+                    _currentVisibleCharacterIndex++;
+                }
+                else if (_currentVisibleCharacterIndex >= lastCharacterIndex)
+                {
+                    // Falls wir beim letzten Buchstaben sind
+                    _sfx.PlayOneShot(_sfx.clip, _sfx.volume);
+                    _textBox.maxVisibleCharacters++;
+                    _currentVisibleCharacterIndex++;
+
+                    // Neue dialogseite
+                    while (!Input.anyKeyDown)
+                    {
+                        yield return null;
+                    }
+                }
+            }
+        }
+
+        // alle lines durch
+        _animator.SetBool("Dialog", false);
+
+        yield return _endEventDelay;
+        endFunction?.Invoke();
+
+        yield break;
+    }
+
+    private IEnumerator DisplayLine(string line)
     {
         TMP_TextInfo textInfo = _textBox.textInfo;
 
@@ -106,57 +119,38 @@ public class TypeWriter : MonoBehaviour
         {
             var lastCharacterIndex = textInfo.characterCount - 1;
 
+            // Falls wir beim letzten Buchstaben sind
             if (_currentVisibleCharacterIndex >= lastCharacterIndex)
             {
                 _textBox.maxVisibleCharacters++;
-                yield return _textboxFullEventDelay;
-                CompleteTextRevealed?.Invoke();
-                _readyForNewText = true;
                 yield break;
             }
 
             char character = textInfo.characterInfo[_currentVisibleCharacterIndex].character;
 
+            // Neue dialogseite
+            if (character == '|')
+            {
+                while (!Input.anyKeyDown)
+                {
+                    yield return null;
+                }
+
+                var newDialogText = _textBox.text.Substring(_currentVisibleCharacterIndex + 1);
+
+                // reset
+                _textBox.maxVisibleCharacters = 0;
+                _currentVisibleCharacterIndex = 0;
+
+                _textBox.text = newDialogText;
+            }
+
             _textBox.maxVisibleCharacters++;
 
-            if (!CurrentlySkipping &&
-                (character == '?' || character == '.' || character == ',' || character == ':' ||
-                 character == ';' || character == '!' || character == '-'))
-            {
-                yield return _interpunctuationDelay;
-            }
-            else
-            {
-                yield return CurrentlySkipping ? _skipDelay : _simpleDelay;
-            }
+            yield return _delay;
 
-            CharacterRevealed?.Invoke(character);
+            playSound();
             _currentVisibleCharacterIndex++;
         }
-    }
-
-    private void Skip(bool quickSkipNeeded = false)
-    {
-        if (CurrentlySkipping)
-            return;
-
-        CurrentlySkipping = true;
-
-        if (!quickSkip || !quickSkipNeeded)
-        {
-            StartCoroutine(SkipSpeedupReset());
-            return;
-        }
-
-        StopCoroutine(_typewriterCoroutine);
-        _textBox.maxVisibleCharacters = _textBox.textInfo.characterCount;
-        _readyForNewText = true;
-        CompleteTextRevealed?.Invoke();
-    }
-
-    private IEnumerator SkipSpeedupReset()
-    {
-        yield return new WaitUntil(() => _textBox.maxVisibleCharacters == _textBox.textInfo.characterCount - 1);
-        CurrentlySkipping = false;
     }
 }
