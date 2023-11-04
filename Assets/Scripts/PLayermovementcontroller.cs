@@ -29,7 +29,7 @@ public class PlayerMovementController : MonoBehaviour
             horizontalInput = 0f;
         }
 
-        movement = new Vector2(Input.GetAxis("Horizontal"), 0).normalized;
+        movement = new Vector2(Input.GetAxisRaw("Horizontal"), 0).normalized;
         animator.SetFloat("Speed", Mathf.Abs(movement.magnitude * movementSpeed));
 
         if (movement.x < 0)
