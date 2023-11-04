@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PLayermovementcontroller : MonoBehaviour
+public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 1.0f;
 
     private Vector2 movement;
 
     private Animator animator;
+    private Transform characterTransform;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        characterTransform = transform; // Get a reference to the character's Transform.
     }
 
     // Update is called once per frame
@@ -30,8 +32,14 @@ public class PLayermovementcontroller : MonoBehaviour
         movement = new Vector2(Input.GetAxis("Horizontal"), 0).normalized;
         animator.SetFloat("Speed", Mathf.Abs(movement.magnitude * movementSpeed));
 
-        bool flipped = movement.x < 0;
-        this.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
+        if (movement.x < 0)
+        {
+            characterTransform.localScale = new Vector3(-1, 1, 1); // Spiegel die Figur nach links
+        }
+        else if (movement.x > 0)
+        {
+            characterTransform.localScale = new Vector3(1, 1, 1); // Stelle die Skalierung auf die ursprüngliche Richtung zurück
+        }
     }
 
     private void FixedUpdate()
@@ -39,8 +47,7 @@ public class PLayermovementcontroller : MonoBehaviour
         if (movement != Vector2.zero)
         {
             var xMovement = movement.x * movementSpeed * Time.deltaTime;
-            transform.Translate(new Vector3(xMovement, 0), Space.World);
+            characterTransform.Translate(new Vector3(xMovement, 0), Space.World);
         }
-
     }
 }
