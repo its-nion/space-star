@@ -79,7 +79,7 @@ public class TypeWriter : MonoBehaviour
                 {
                     char character = textInfo.characterInfo[_currentVisibleCharacterIndex].character;
 
-                    _sfx.Play();
+                    _sfx.PlayOneShot(_sfx.clip, _sfx.volume);
                     _textBox.maxVisibleCharacters++;
 
                     yield return _delay;
