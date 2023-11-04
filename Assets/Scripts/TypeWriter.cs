@@ -94,7 +94,7 @@ public class TypeWriter : MonoBehaviour
                     _currentVisibleCharacterIndex++;
 
                     // Neue dialogseite
-                    while (!Input.anyKeyDown)
+                    while (!Input.GetKeyDown(KeyCode.Space))
                     {
                         yield return null;
                     }
