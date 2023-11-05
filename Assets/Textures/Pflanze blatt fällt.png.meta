@@ -1,0 +1,866 @@
+fileFormatVersion: 2
+guid: 2757bf89eaae4bc4fb85609a332edca2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_0"
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 25
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afb37dd038e40f4bb8f0124587570c8
+      internalID: 1382624992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_1"
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 25
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d81ca8ed2fbd4f54aa4ec33c845a6c9c
+      internalID: -1597926151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_2"
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 25
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9be6abc29a8fa42a820fd1226b49bb
+      internalID: -1618942215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_3"
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 25
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223c428f18c8079489f3549a4543a224
+      internalID: 346226543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_4"
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 49
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a4acddf06d87748926cba3b58b76ac
+      internalID: 1199946058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_5"
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 25
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874018cbeb3844846a8cca97c265f0b2
+      internalID: 1889289732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_6"
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 25
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa94318bc2cc7964c963ae70e59544c5
+      internalID: 805121357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_7"
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 25
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cfc144528965d8489db98354f8b91f6
+      internalID: -1277357760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_8"
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 25
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2378da2ab4a0b074aab84c7ef1d7c318
+      internalID: 1104609572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_9"
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 25
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e913ce8cacd872644822970aa1acdb4f
+      internalID: 1071168994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_10"
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 25
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7a51f4137fb984daf92e07099752f1
+      internalID: -1628813186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_11"
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 25
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd4a4f20ea5cca9468d4aaaa5358e543
+      internalID: -2030861722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_12"
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 25
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77fcf9945f070b1459352253d12c7cfe
+      internalID: 368183242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_13"
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 25
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3e88cf415fbfd43864febac827e4b7
+      internalID: 1474531129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_14"
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 25
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c9b79210cc35541831a6a7f401909f
+      internalID: 1507948418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_15"
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 25
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f4a0cb8244733040b98eda9ecf5c309
+      internalID: 13751094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_16"
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 25
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e059e54f1256ceb4ca3c244ba62937a6
+      internalID: -1865144015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_17"
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 25
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea7c0d8dede1de43811d779e01d8b91
+      internalID: 433338138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_18"
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 25
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0133a08d2a6697d4493944d6001f64f8
+      internalID: -610894138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_19"
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 25
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab07b90fdf4541e4e9f680d80ad5a42e
+      internalID: 1763060633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_20"
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 25
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d70d9da343c1f4e861cc7cb7cf13e9
+      internalID: 1281844652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_21"
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 25
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d7196ad842e6f4f8dd7bdce3ae3797
+      internalID: -2005931623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_22"
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 25
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa786a511c0dc534da747b628e0c1eb1
+      internalID: 936758467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_23"
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 25
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe05728da4a6744ca664c56c7e2c303
+      internalID: -412425427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_24"
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 25
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6055bc0742de65d4eb3e8d894759f198
+      internalID: -256940968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_25"
+      rect:
+        serializedVersion: 2
+        x: 1945
+        y: 25
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911b38d8e5f883145baf32c1b337a91d
+      internalID: -1919927335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_26"
+      rect:
+        serializedVersion: 2
+        x: 2025
+        y: 25
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da1cde56255178c4ea473aaf0f29cf68
+      internalID: 1351253709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_27"
+      rect:
+        serializedVersion: 2
+        x: 2104
+        y: 25
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1e67819a3b6c6408b247185a8044e1
+      internalID: -181757494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_28"
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 25
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7064fec0db84c2348936cb96fb386772
+      internalID: -1589641087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_29"
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 43
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaaa2394b5be2124fbb346b9509a7685
+      internalID: -1668531685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_30"
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 38
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31de3cd76cd24ac4096a733240f7412b
+      internalID: -2029439603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_31"
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 33
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d58062cb189ca834d8d459dfdb384ef2
+      internalID: 926201580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pflanze blatt f\xE4llt_32"
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 27
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3786fa7fe1a8b049a5c15c6dc102df7
+      internalID: 1429210344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "Pflanze blatt f\xE4llt_0": 1382624992
+      "Pflanze blatt f\xE4llt_1": -1597926151
+      "Pflanze blatt f\xE4llt_10": -1628813186
+      "Pflanze blatt f\xE4llt_11": -2030861722
+      "Pflanze blatt f\xE4llt_12": 368183242
+      "Pflanze blatt f\xE4llt_13": 1474531129
+      "Pflanze blatt f\xE4llt_14": 1507948418
+      "Pflanze blatt f\xE4llt_15": 13751094
+      "Pflanze blatt f\xE4llt_16": -1865144015
+      "Pflanze blatt f\xE4llt_17": 433338138
+      "Pflanze blatt f\xE4llt_18": -610894138
+      "Pflanze blatt f\xE4llt_19": 1763060633
+      "Pflanze blatt f\xE4llt_2": -1618942215
+      "Pflanze blatt f\xE4llt_20": 1281844652
+      "Pflanze blatt f\xE4llt_21": -2005931623
+      "Pflanze blatt f\xE4llt_22": 936758467
+      "Pflanze blatt f\xE4llt_23": -412425427
+      "Pflanze blatt f\xE4llt_24": -256940968
+      "Pflanze blatt f\xE4llt_25": -1919927335
+      "Pflanze blatt f\xE4llt_26": 1351253709
+      "Pflanze blatt f\xE4llt_27": -181757494
+      "Pflanze blatt f\xE4llt_28": -1589641087
+      "Pflanze blatt f\xE4llt_29": -1668531685
+      "Pflanze blatt f\xE4llt_3": 346226543
+      "Pflanze blatt f\xE4llt_30": -2029439603
+      "Pflanze blatt f\xE4llt_31": 926201580
+      "Pflanze blatt f\xE4llt_32": 1429210344
+      "Pflanze blatt f\xE4llt_4": 1199946058
+      "Pflanze blatt f\xE4llt_5": 1889289732
+      "Pflanze blatt f\xE4llt_6": 805121357
+      "Pflanze blatt f\xE4llt_7": -1277357760
+      "Pflanze blatt f\xE4llt_8": 1104609572
+      "Pflanze blatt f\xE4llt_9": 1071168994
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
