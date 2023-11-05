@@ -9,6 +9,7 @@ public class TypeWriter : MonoBehaviour
     [SerializeField] private TMP_Text _textBox;
     [SerializeField] private AudioSource _sfx;
     [SerializeField] private Animator _animator;
+    [SerializeField] private PlayerMovementController _pmc;
 
     [Header("Typewriter Settings")]
     [SerializeField] private float charactersPerSecond = 20;
@@ -53,6 +54,8 @@ public class TypeWriter : MonoBehaviour
 
     private IEnumerator Dialog(string text, Action endFunction)
     {
+        _pmc.enabled = false;
+
         currentLines = text.Split('|');
 
         _animator.SetBool("Dialog", true);
@@ -107,6 +110,8 @@ public class TypeWriter : MonoBehaviour
 
         yield return _endEventDelay;
         endFunction?.Invoke();
+
+        _pmc.enabled = true;
 
         yield break;
     }
