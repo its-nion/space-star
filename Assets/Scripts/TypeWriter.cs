@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TypeWriter : MonoBehaviour
 {
@@ -10,12 +11,20 @@ public class TypeWriter : MonoBehaviour
     [SerializeField] private AudioSource _sfx;
     [SerializeField] private Animator _animator;
     [SerializeField] private PlayerMovementController _pmc;
+    [SerializeField] private RawImage _rImg;
+
+    [Header("Textures")]
+    [SerializeField] private Texture _astronaut;
+    [SerializeField] private Texture _radio;
+    [SerializeField] private Texture _questionMark;
+    [SerializeField] private Texture _alien;
 
     [Header("Typewriter Settings")]
     [SerializeField] private float charactersPerSecond = 20;
     [SerializeField] [Range(0.1f, 0.5f)] private float sendDoneDelay = 0.25f;
 
-    public static TypeWriter Instance { get; private set; }
+    public bool isAvailable = true;
+
     private string[] currentLines;
     private int _currentVisibleCharacterIndex;
     private WaitForSeconds _delay;
@@ -24,25 +33,36 @@ public class TypeWriter : MonoBehaviour
 
     private void Awake()
     {
-        // If there is an instance, and it's not me, delete myself.
+        _delay = new WaitForSeconds(1 / charactersPerSecond);
 
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-
-            _delay = new WaitForSeconds(1 / charactersPerSecond);
-
-            _endEventDelay = new WaitForSeconds(sendDoneDelay);
-        }
+        _endEventDelay = new WaitForSeconds(sendDoneDelay);
     }
 
     private void playSound()
     {
         //_sfx.Play();
+    }
+
+    private void switchRawImageToCharacter(char c)
+    {
+        switch (c)
+        {
+            case '1': // Astronaut
+                _rImg.texture = _astronaut;
+                break;
+            case '2': // Radio
+                _rImg.texture = _radio;
+                break;
+            case '3': // Fragezeichen
+                _rImg.texture = _questionMark;
+                break;
+            case '4': // Alien
+                _rImg.texture = _alien;
+                break;
+            default:
+                _rImg.texture = _astronaut;
+                break;
+        }
     }
 
     public void StartDialog(string dialogText, Action endFunction)
@@ -54,9 +74,16 @@ public class TypeWriter : MonoBehaviour
 
     private IEnumerator Dialog(string text, Action endFunction)
     {
+        isAvailable = false;
         _pmc.enabled = false;
 
         currentLines = text.Split('|');
+
+        if (currentLines[0][0] == '1' | currentLines[0][0] == '2' | currentLines[0][0] == '3' | currentLines[0][0] == '4')
+        {
+            switchRawImageToCharacter(currentLines[0][0]);
+            currentLines[0] = currentLines[0].Substring(1);
+        }
 
         _animator.SetBool("Dialog", true);
         yield return new WaitForSeconds(0.35f);
@@ -68,8 +95,15 @@ public class TypeWriter : MonoBehaviour
             _textBox.maxVisibleCharacters = 0;
             _currentVisibleCharacterIndex = 0;
 
-            // initiate
-            _textBox.text = l;
+            if (l[0] == '1' | l[0] == '2' | l[0] == '3' | l[0] == '4')
+            {
+                switchRawImageToCharacter(l[0]);
+                _textBox.text = l.Substring(1);
+            }
+            else
+            {
+                _textBox.text = l;
+            }
 
             TMP_TextInfo textInfo = _textBox.textInfo;
 
@@ -112,50 +146,8 @@ public class TypeWriter : MonoBehaviour
         endFunction?.Invoke();
 
         _pmc.enabled = true;
+        isAvailable = true;
 
         yield break;
-    }
-
-    private IEnumerator DisplayLine(string line)
-    {
-        TMP_TextInfo textInfo = _textBox.textInfo;
-
-        while (_currentVisibleCharacterIndex < textInfo.characterCount + 1)
-        {
-            var lastCharacterIndex = textInfo.characterCount - 1;
-
-            // Falls wir beim letzten Buchstaben sind
-            if (_currentVisibleCharacterIndex >= lastCharacterIndex)
-            {
-                _textBox.maxVisibleCharacters++;
-                yield break;
-            }
-
-            char character = textInfo.characterInfo[_currentVisibleCharacterIndex].character;
-
-            // Neue dialogseite
-            if (character == '|')
-            {
-                while (!Input.anyKeyDown)
-                {
-                    yield return null;
-                }
-
-                var newDialogText = _textBox.text.Substring(_currentVisibleCharacterIndex + 1);
-
-                // reset
-                _textBox.maxVisibleCharacters = 0;
-                _currentVisibleCharacterIndex = 0;
-
-                _textBox.text = newDialogText;
-            }
-
-            _textBox.maxVisibleCharacters++;
-
-            yield return _delay;
-
-            playSound();
-            _currentVisibleCharacterIndex++;
-        }
     }
 }
