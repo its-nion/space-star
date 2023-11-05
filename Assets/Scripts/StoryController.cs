@@ -176,6 +176,8 @@ public class StoryController : MonoBehaviour
                     "|1Da scheint jemand mir eine Nachricht gesendet zu haben!",
                     nextStep
                     );
+
+            return;
         }
 
         if (storyIndex == 4 && type == "Radio") // Erste Radio Nachricht nach singen
@@ -191,6 +193,8 @@ public class StoryController : MonoBehaviour
                     "|2Bzzzzzzzz",
                     nextStep
                     );
+
+            return;
         }
 
         if (storyIndex == 6 && type == "Mikrofon") // Zweites Singen
@@ -208,6 +212,8 @@ public class StoryController : MonoBehaviour
                     "|1Ich sollte mal nachschauen!",
                     nextStep
                     );
+
+            return;
         }
 
         if (storyIndex == 8 && type == "Fenster") // Aliens im Fenster
@@ -222,6 +228,8 @@ public class StoryController : MonoBehaviour
                     "|1Ich hol mir mal was in der Küche",
                     nextStep
                     );
+
+            return;
         }
 
         if (storyIndex == 10 && type == "Kuche") // Reden in der Kuche
@@ -238,6 +246,8 @@ public class StoryController : MonoBehaviour
                     "|1<size=40>ich hab langsam das gefühl ich bin nicht allein</size>",
                     nextStep
                     );
+
+            return;
         }
 
         if (storyIndex == 12 && type == "Bucherregal") // Runtergefallenes Buch entdeckt
@@ -255,6 +265,8 @@ public class StoryController : MonoBehaviour
                     "|1Ooh, das ist nur eine neue Nachricht",
                     nextStep
                     );
+
+            return;
         }
 
         if (storyIndex == 14 && type == "Radio") // Letztes mal beim Radio
@@ -269,6 +281,8 @@ public class StoryController : MonoBehaviour
                     "|1Ich gehe wieder singen!",
                     nextStep
                     );
+
+            return;
         }
 
         if (storyIndex == 16 && type == "Mikrofon") // Beim Lichtschalter
@@ -282,6 +296,8 @@ public class StoryController : MonoBehaviour
                     "|1Blinzel ich gerade sehr lange oder ist das Licht ausgegangen?",
                     nextStep
                     );
+
+            return;
         }
 
         if (storyIndex == 18 && type == "Lichtschalter") // Beim Lichtschalter
@@ -298,6 +314,70 @@ public class StoryController : MonoBehaviour
                     "|4DENKST DU, DU BIST ALLEIN HIER IM WELTALL?",
                     nextStep
                     );
+
+            return;
+        }
+
+        if (type == "Lichtschalter") // Beim Lichtschalter
+        {
+            typeWriter.StartDialog(
+                    "1Ich..." +
+                    "|1...hab grad keine Lust den zu betätigen!",
+                    null
+                    );
+
+            return;
+        }
+
+        if (type == "Kuche") // Beim Lichtschalter
+        {
+            typeWriter.StartDialog(
+                    "1Sehe ich aus als wäre ich hungrig?",
+                    null
+                    );
+
+            return;
+        }
+
+        if (type == "Mikrofon") // Beim Lichtschalter
+        {
+            typeWriter.StartDialog(
+                    "1Ich erspare dir mal meinen wunderschönen Gesang",
+                    null
+                    );
+
+            return;
+        }
+        
+        if (type == "Radio") // Beim Lichtschalter
+        {
+            typeWriter.StartDialog(
+                    "2Keine neuen Nachrichten",
+                    null
+                    );
+
+            return;
+        }
+
+        if (type == "Bucherregal") // Beim Lichtschalter
+        {
+            typeWriter.StartDialog(
+                    "1Noch nie angefasst" +
+                    "|1Ich weiß nichtmal warum das hier steht!",
+                    null
+                    );
+
+            return;
+        }
+
+        if (type == "Fenster") // Beim Lichtschalter
+        {
+            typeWriter.StartDialog(
+                    "1Wunderschön, nicht wahr?",
+                    null
+                    );
+
+            return;
         }
     }
 }
